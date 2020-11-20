@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="calc">
+        竞拍价格：<input type="text" name="num1"> <br/>
+        购买数量：<input type="text" name="num2"> <br/>
+        预计总价：<input type="text" name="total"> <br/>
+        <input type="button" onclick="caculate()" value="计算">
+    </form>
+    <script>
+        function caculate(){
+            var n1=document.calc.num1.value;
+            var n2=document.calc.num2.value;
+            n1=parseFloat(n1);
+            n2=parseFloat(n2);
+            // if(n1<0){
+            //     alert("竞拍价格不负数")；
+            //     return;
+            // }
+            if(n1!=""&&n2!=""){
+            var zj=parseFloat(n1)*parseFloat(n2);
+            document.calc.total.value=zj;
+            //console.log(zj);
+            //alert(zj);
+            }
+            else{
+                alert("You should int number")
+            }
+
+
+        }
+    </script>
+</body>
+</html>

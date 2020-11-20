@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ss="Hello World,Hello JavaScript";
+        var cnt=0;
+        var index=ss.indexOf('o');
+        while(index!=-1){
+            console.log(index);
+            cnt++;
+            index=ss.indexOf('o',index+1)
+        }
+        for(var i=0;i<ss.length;i++){
+            if(ss[i]=='o'){
+                console.log(i);
+                cnt++;
+            }
+        }
+    </script>
+</body>
+</html>

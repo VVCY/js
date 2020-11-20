@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>倒计时</title>
+		<style type="text/css">
+			body {
+				font-size: 66px;
+				text-align: center;
+			}
+
+			#timer {
+				margin: 0 auto;
+				height: 88px;
+				width: 812px;
+			}
+
+			#timer div {
+				float: left;
+			}
+
+			.twonum {
+				margin: 0 2px;
+			}
+
+			.num {
+				height: 88px;
+				width: 40px;
+				margin: 0 1px;
+				color: #fff;
+				background-color: #000;
+				border-radius: 9px;
+				padding: 0 4px;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.downnum {
+				position: absolute;
+				top: 88px;
+				animation: down .5s;
+			}
+
+			@keyframes down {
+				from {
+					top: 0;
+				}
+
+				to {
+					top: 88px;
+				}
+			}
+
+			.upnum {
+				position: absolute;
+				top: 0;
+				animation: up .5s;
+			}
+
+			@keyframes up {
+				from {
+					top: -88px;
+				}
+
+				to {
+					top: 0;
+				}
+			}
+		</style>
+		<script type="text/javascript">
+			class CNumber {
+				// 创建一个可切换数字
+				constructor(max, value, pre) {
+					this.pre = pre;
+					this.main = document.createElement('div');
+					this.main.className = 'num';
+					[this.max, this.value] = [max, value];
+					let up = document.createElement('div');
+					up.className = 'upnum';
+					up.innerHTML = value;
+					this.main.appendChild(up);
+					let down = document.createElement('div');
+					down.className = 'downnum';
+					down.innerHTML = 0;
+					this.main.appendChild(down);
+					[this.up, this.down] = [up, down];
+				}
+
+				Sub() {
+					if (this.value > 0) {
+						this.value--;
+						[this.up, this.down] = [this.down, this.up];
+						this.up.innerHTML = this.value;
+						this.up.className = 'upnum';
+						this.down.className = 'downnum';
+					} else if (this.pre) {
+						this.pre.Sub();
+						this.value = this.max + 1;
+						this.Sub();
+					} else {
+						throw 0;
+					}
+				}
+
+				GetElem() {
+					return this.main;
+				}
+			}
+
+			class CTimer {
+				constructor(id) {
+					this.main = document.getElementById(id);
+					let str = ['天', '小时', '分钟', '秒'];
+					let max = [9, 9, 2, 3, 5, 9, 5, 9];
+					let value = CTimer.ComNum();
+					let pre = null;
+					for (let i = 0; i < 4; i++) {
+						let twonum = document.createElement('div');
+						twonum.className = 'twonum';
+						for (let j = 0; j < 2; j++) {
+							let index = i * 2 + j;
+							pre = new CNumber(max[index], value[index], pre);
+							twonum.appendChild(pre.GetElem());
+						}
+						this.main.appendChild(twonum);
+						let txt = document.createElement('div');
+						txt.innerHTML = str[i];
+						this.main.appendChild(txt);
+					}
+					let timer = setInterval(function() {
+						try {
+							pre.Sub();
+						} catch (err) {
+							clearInterval(timer);
+						}
+					}, 1000);
+				}
+
+				static ComNum() {
+					let days = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+					let date = new Date();
+					let month = date.getMonth();
+					let day = date.getDate();
+					for (let i = 0; i < month; i++) {
+						day += days[i];
+					}
+					day = 366 - day;
+					let hour = 23 - date.getHours();
+					let minute = 59 - date.getMinutes();
+					let second = 60 - date.getSeconds();
+					return [parseInt(day / 10), day % 10,
+						parseInt(hour / 10), hour % 10,
+						parseInt(minute / 10), minute % 10,
+						parseInt(second / 10), second % 10
+					];
+				}
+			}
+
+			window.onload = function() {
+				new CTimer('timer');
+			}
+		</script>
+	</head>
+	<body>
+		<p>距离2021年1月1日00:00:00</p>
+		<p>还有</p>
+		<div id="timer"></div>
+	</body>
+</html>

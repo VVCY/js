@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>书名</p>
+    <input type="text">
+    <button>新增</button>
+    <ul id="kc">
+        <li>JavaScript</li>
+    </ul>
+    <script>
+        var ul=document.getElementById("kc");
+        var byn=document.getElementsByTagName("button");
+        var input=document.querySelector("input");
+        byn[0].onclick=function(){
+            var li=document.createElement("li")
+            var txt=document.createTextNode(input.value);
+            li.appendChild(txt);
+            ul.appendChild(li);
+        }
+    </script>
+   
+</body>
+</html>

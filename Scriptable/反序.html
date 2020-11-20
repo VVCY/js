@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arrx=["1","2","3"]
+        for(var i=0;i<arrx.length;i++){
+            console.log(arrx[i]);
+        }
+        for(var i=arrx.length-1;i>=0;i--){
+            console.log(arrx[i]);
+        }
+        console.log(arrx.reverse());
+        var arry=[7,0,9,8,4,2,6,17,88,21];
+        var newA=[];
+        for(var i=0;i<arry.length;i++){
+            if(arry[i]%2!=0){
+               //newA.push();
+               newA[i++]=arry[i];
+               //newA[newA.length]=arry[i];
+            }
+        }
+        console.log(arry);
+        console.log(newA);
+        function delou(num){
+            return num%2!=0;//留下
+        }
+        console.log(arry.filter(delou));
+    </script>
+</body>
+</html>

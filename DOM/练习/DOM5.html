@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+</style>
+</head>
+<body>
+    <select name="" id="left" multiple>
+        <option value="北京">北京</option>
+        <option value="上海">上海</option>
+        <option value="深圳">深圳</option>
+    </select>
+    <button>-></button>
+    <button><-</button>
+    <button>->></button>
+    <button><<-</button>
+    <select name="" id="right" multiple>
+        <option value="广州">广州</option>
+        <option value="重庆">重庆</option>
+        <option value="天津">天津</option>
+    </select>
+    <script>
+        var btns=document.getElementsByTagName("button");
+        var ls=document.getElementById("left");
+        var rs=document.getElementById("right");
+        btns[0].onclick=function(){
+            var del_opt=ls.options[ls.selectedIndex];
+            var optnew=document.createElement("option");
+            var txt=document.createTextNode(ls.value);
+            optnew.appendChild(txt);
+            rs.appendChild(optnew);
+            ls.removeChild(del_opt);
+        }
+        btns[1].onclick=function(){
+            var del_opt=rs.options[rs.selectedIndex];
+            var optnew=document.createElement("option");
+            var txt=document.createTextNode(rs.value);
+            optnew.appendChild(txt);
+            ls.appendChild(optnew);
+            rs.removeChild(del_opt);
+        }
+        // btns[1].onclick=function(){
+        //     for(var i=0;i<ls.options.length;i++){
+        //         var del_opt=ls.options[i];
+        //         var optc=del_opt.cloneNode(true);
+        //         rs.appendChild(optc);
+        //     }
+        // }
+        //  while(ls.options.length!=0){
+        //      ls.removeChild(ls.options[0])
+        //  }
+        btns[2].onclick=function(){
+            var del_opt=ls.options;
+            var optnew=document.createElement("option");
+            var txt=document.createTextNode(ls.value);
+            optnew.appendChild(txt);
+            rs.appendChild(optnew);
+            ls.removeChild(del_opt);
+        }
+        // btns[3].onclick=function(){
+        //     for(var i=0;i<ls.options.length;i++){
+        //         var del_opt=ls.options[i];
+        //         var optc=del_opt.cloneNode(true);
+        //         rs.appendChild(optc);
+        //     }
+        // }
+        //  while(ls.options.length!=0){
+        //      ls.removeChild(ls.options[0])
+        //  };
+        
+    </script>
+</body>
+</html>

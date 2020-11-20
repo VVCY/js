@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//1字面量：
+        //直接创建自定义对象
+        // var User={
+        //     name:"mr",
+        //     pwd:"mrsoft"
+        // }
+        // document.write(User.name);
+        // document.write(User.pwd)
+        // //document.write(User.["pwd"])
+        // var user=new Object();
+        // user.name2="mr";
+        // user.pww="mrrr"
+        // document.write(user.name2)
+        /////////////////////////////////////////////////
+//1字面量
+        var myobj1={
+            name:"张三",
+            age:18,
+            display:function(){
+                document.write("姓名："+this.name+"<br>")
+                document.write("年龄："+this.age+"<br>")
+            }
+        };
+        console.log(myobj1.name);
+        console.log(myobj1['age']);
+        myobj1.display();
+        myobj1["display"]();
+//2类 实例化对象
+        var myobj2=new Object();
+        myobj2.name="lisa";
+        myobj2.age=19;
+        myobj2.show=show;
+        function show(){
+            console.log("姓名："+this.name);
+            console.log("年龄："+this.age);
+        }
+        myobj2.show();
+//3构造函数创建对象
+        function User(name,age){
+            this.name=name;
+            this.age=age;
+            this.showInfo=function(){
+                console.log("姓名："+this.name);
+                console.log("年龄："+this.age);
+            }
+        }
+        var user1=new User("王五",20);
+        var user2=new User("赵四",22);
+        console.log("user1.name:"+user1.name);
+        console.log("user2.age:"+user2.age);
+        user1.showInfo();
+        user2['showInfo']();
+        with(user1){
+            console.log(name);
+            console.log(age);
+            showInfo();
+        }
+        for(var x in user1){
+            console.log(user[x]);
+        }
+            </script>
+</body>
+</html>

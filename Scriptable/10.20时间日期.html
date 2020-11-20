@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var date=new Date();
+        document.write(date);
+        //需求，以指定的格式显示日期和时间
+        var year=date.getFullYear();
+        var mm=date.getMonth();
+        var dd=date.getDate();
+        var result=year+"年"+(mm+1)+"月"+(dd)+"日";
+        document.write("<h1>"+result+"</h1>");
+        //2指定日期时间
+        var zddate=new Date(2019,10,12,22,33,44)//11月份
+        document.write(zddate);
+        //3指定日期时间
+        var zd2=new Date("2020-11-11");
+        document.write(zd2);
+        //4时间戳timestamp
+        ts1=date.getTime();
+        ts2=date.valueOf();
+        ts3=+new Date();
+        ts4=Date.now();
+        console.log(ts1);
+        console.log(ts2);
+        console.log(ts3);
+        console.log(ts4);
+        //5统计代码的运行时间
+        var start =+new Date();
+        var ss="";
+        for(var i=1;i<50000;i++){
+            ss+=i;
+        }
+        var end =+new Date();
+        console.log("运行时间："+(end-start)+'ms');
+        //6倒计时
+    </script>
+</body>
+</html>

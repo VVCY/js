@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- h1#header+h2+ul>li#one.hot*4-->
+    <h1 id="header">水果系列</h1>
+    <h2>购买食品杂货</h2>
+    <ul>
+        <li id="one" name="fruit" class="hot">无花果</li>
+        <li id="two" class="hot">松子</li>
+        <li id="three" class="hot"><em>新鲜</em>蜂蜜</li>
+        <li id="four" class="hot">香醋</li>
+    </ul>
+    <script>
+        var h1s=document.getElementsByTagName("h1");
+        var h1=h1s[0];
+        console.log(h1);
+        var h1jiandan=document.getElementById("header");
+        console.log(h1jiandan);
+        var lihots=document.getElementsByClassName("hot");
+        console.log(lihots);
+        var h1=document.querySelector("h1");
+        console.log(h1);
+        var h2=document.getElementsByTagName("h2");
+        console.log(h2[0].firstChild.nodeValue);
+        var em=document.getElementsByTagName("em");
+        console.log(em[0].firstChild.nodeValue);
+        var tag=document.getElementsByTagName("li");
+        console.log(tag[0].firstChild.nodeValue);
+        var fli=document.getElementsByName("fruit");
+        console.log(fli[0]);
+        ////////////////////////
+        var h2n=document.querySelector("h2");//h2的第一个元素
+        console.log(h2n);
+        var xx=document.querySelector(".hot");
+        console.log(xx);
+    </script>
+</body>
+</html>

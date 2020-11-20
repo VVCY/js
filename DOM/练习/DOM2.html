@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <input type="text" name="hanzi" id="hanzi">
+        <input type="text" name="shuzi" id="shuzi">
+        <button>按钮</button>
+    <script>
+        var btn=document.getElementsByTagName('button');
+        var put=document.getElementsByTagName('input');
+        btn[0].onclick=function(){
+            z=put[0].value;
+            put[0].value=put[1].value;
+            put[1].value=z;
+        };
+    </script>
+</body>
+</html>

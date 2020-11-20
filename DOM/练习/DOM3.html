@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol id="abc"></ol>
+    <button onclick="add()">点我添加li</button>
+    <script>
+        var cnt=1;
+        function add(){
+            var ele=document.createElement("li");
+            ele.innerHTML="->"+cnt++
+            document.getElementById('abc').appendChild(ele);
+            var ol=document.querySelector("ol");
+            if(cnt%2==0){
+                ele.style.color="red";
+            }
+            else{ele.style.color="green"}
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组练习</title>
+</head>
+<body>
+    <script>
+        //1.new Array()
+        var arr1=new Array();
+        var arr2=new Array(7);
+        var arr3=new Array(4,"hello",5,true);
+        // console.log("arr1:"+arr1);
+        // console.log("arr2:"+arr2);
+        // console.log("arr3:"+arr3);
+        // console.log(arr2[3]);
+        // console.log("----------");
+        // console.log(arr3.length);
+        // arr3.length=9;
+        // arr3[4]=99;//插入元素
+        // arr3[2]=77;//修改
+        // console.log(arr3);
+         //2.字面量
+        var arrz1=[];
+        var arrz2=[3,4,5,6,7,];
+        // arrz2.push(11,22,33);
+        // console.log(arrz2);
+        // var rr=arrz2.pop();
+        // console.log(arrz2);
+        // console.log(rr);
+        //unshift
+        arrz2.unshift(11,22,33);//头部添加
+        console.log(arrz2);
+        var rr=arrz2.pop();
+        console.log(arrz2);
+        console.log(rr);
+        //splice
+        arrz2.splice(1,2,"one","two")
+        console.log(arrz2);
+        var arrt=["x","y"]
+        var arrx=arrt.concat(arrz2);//拼接 返回一个新数组
+        console.log(arrt);
+        console.log(arrz2);
+        console.log(arrx);
+        var namex=["一","二","三"]
+        console.log(namex.toString());
+        console.log(namex.join("~~"));
+        var arr=['red','green','blue','pink']
+        var newArr=[];
+        for(var i=arr.length-1;i>=0;i--)
+        {
+            newArr[newArr.length]=arr[i];
+        }
+        console.log(newArr);
+        
+    </script>
+</body>
+</html>

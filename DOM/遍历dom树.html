@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h3>旗帜图书系列</h3>
+    <ul>
+        <li>javascript从入门到精通</li>
+        <li>网络编程基础</li>
+        <li>python教程</li>
+        <li>javaweb基础</li>
+    </ul>
+    <script>
+        console.log(document.title);
+        //1文档节点
+        console.log(document.nodeName);
+        console.log(document.nodeType);
+        console.log(document.nodeValue);
+        //2元素节点
+        var bd =document.body;
+        console.log(bd);
+        console.log(bd.nodeName);
+        console.log(bd.nodeType);
+        console.log(bd.nodeValue);
+        //3.html
+        var ht =document.documentElement;
+        console.log(ht);
+        //4.h3
+        var htemp =bd.firstChild;
+        console.log(htemp);
+        var h3=bd.childNodes[1];
+        console.log(h3);
+        console.log('//////////////////////');
+        var h3txt=h3.firstChild;
+        //console.log(h3txt.nodeName);
+        //console.log(h3txt.nodeType);
+        console.log(h3txt.nodeValue);
+        //5打印python
+        var bd=document.body;
+        var nodes=bd.childNodes;
+        var ul=nodes[3];
+        console.log(ul);
+        var list=ul.childNodes;
+        console.log(list);
+        var li3=list[5];
+        var txt=li3.firstChild;
+        console.log(li3);
+        console.log(txt.nodeValue);
+        var bdd=document.body;
+        var h33=bdd.firstElementChild;
+        console.log(h33);
+        console.log(bdd.children[1]);
+        
+    </script>
+</body>
+</html>
+

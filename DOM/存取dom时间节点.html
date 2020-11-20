@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+        var div1=document.getElementById("d1");
+        console.log(div1.innerHTML);
+        div1.innerHTML="<b>这是修改后的</b>";
+        var ul=document.querySelector("ul");
+        console.log(ul.innerHTML)
+        console.log(ul.textContent)
+        ss=`<li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>`
+        ul.innerHTML=ss;
+        //ul.innerText=ss;
+        // console.log(div1.firstChild.nodeValue);
+        // div1.firstChild.nodeValue="被我改掉了";
+        }
+    </script>
+</head>
+<body>
+    <div id="d1">hello HTML DOM</div>
+    <ul>
+        <li id="one" name="fruit" class="hot">无花果</li>
+        <li id="two" class="hot">松子</li>
+        <li id="three" class="hot"><em>新鲜</em>蜂蜜</li>
+        <li id="four" class="hot">香醋</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getMax(a,b){
+            console.log(arguments);
+            return a>b?a:b;
+        }
+        console.log(getMax(33,99));
+        console.log('-----------');
+        console.log(getMax(33,44,55,66));//实参个数大于形参个数得44，多的不要
+        console.log(getMax(33));//小于的话是undefined
+    </script>
+</body>
+</html>

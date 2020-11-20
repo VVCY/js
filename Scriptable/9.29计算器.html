@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- form>input[name="tb"]*4 -->
+    <form action="">
+        第一个数：<input type="text" name="tb1"><br>
+        第二个数：<input type="text" name="tb2"><br>
+        运行结果：<input type="text" name="tb3"><br>
+        <input type="button" name="jia" value="+" onclick="tb3.value=fcal(tb1.value,tb2.value,'+')">
+        <input type="button" name="jian" value="-" onclick="tb3.value=fcal(tb1.value,tb2.value,'-')">
+        <input type="button" name="cheng" value="x" onclick="tb3.value=fcal(tb1.value,tb2.value,'x')">
+        <input type="button" name="chu" value="÷" onclick="tb3.value=fcal(tb1.value,tb2.value,'÷')">
+        
+    </form>
+    <script>
+        function fcal(num1,num2,oper){
+            switch(oper){
+                case'+':return eval(num1)+eval(num2);
+                case'-':return eval(num1)-eval(num2);
+                case'x':return eval(num1)*eval(num2);
+                case'÷':return eval(num1)/eval(num2);
+            }
+            
+        }
+    </script>
+</body>
+</html>

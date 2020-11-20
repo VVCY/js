@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{width: 100px;
+        height: 100px;}
+    .test{background-color: aqua;}
+    .change{background-color: blueviolet;}
+</style>
+<div class="test">
+    文本
+</div>
+<button>改变样式</button>
+<p>隐藏此文本</p>
+<script>
+    var btn=document.querySelector("button");
+    var div=document.querySelector("div");
+    btn.onclick=function(){
+        //1div.setAttribute("class","change");
+        div.className="change";
+    }
+    var po=document.querySelector("p");
+    po.onclick=function(){
+        po.style.display="none";
+    }
+</script>
+<body>
+    
+</body>
+</html>

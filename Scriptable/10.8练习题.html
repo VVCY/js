@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var stu=['王一','李二','张三','赵四'];
+        var xs=prompt('请输入学生姓名');
+        for(var i=0;i<stu.length;i++){   
+        if(xs==stu[i]){
+            alert('该学生已录入');
+            break;
+        }
+        else{
+            stu.push(xs);
+            alert(stu);
+            break;
+        }
+        }
+        
+    </script>
+</body>
+</html>

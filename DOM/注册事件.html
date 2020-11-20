@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>1传统形式</p>
+        <p>2事件监听形式</p>
+        <button>解除事件绑定</button>
+    </div>
+    <script>
+         var dv=document.querySelector("div");
+         var p1=document.querySelector("p");
+         p1.addEventListener("click",function(){
+             alert("p1被单击了");
+         })
+         dv.addEventListener("click",function(){
+             alert("div被点击了");//单击子元素 父亲也会收到事件
+         })
+         document.onclick=function(){
+             alert("文档被单击了");
+         }//事件流
+        // dv.onclick=function(){
+        //     console.log("01div的click")
+        // }
+        // dv.onclick=function(){
+        //     console.log("02div的click")
+        // }
+        dv.addEventListener("click",fn1);
+        //dv.addEventListener("click",fn2);
+        function fn1(){
+            console.log("监听形式的click1");
+        }
+        function fn2(){
+            console.log("监听形式的click2");
+        }
+        var btn=document.querySelector("button");
+        btn.onclick=function(){
+            //dv.removeEventListener("click",fn1)
+            dv.onclick=null;
+        }
+    </script>
+    <p><b>aaa</b>
+    </p>
+    <script>
+        document.addEventListener("contextmenu",function(e){
+            e.preventDefault();
+            return false;
+        })
+    </script>
+</body>
+</html>

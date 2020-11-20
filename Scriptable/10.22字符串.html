@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        while(1){
+        var name=prompt('请输入用户名')
+        if(name.length<3||name.length>10){
+            alert('用户名长度必须在3-10之间')
+        }
+        else if(name.indexOf('admin')!==-1){
+            alert('用户名不能包含admin')
+        }
+        else{
+            alert('输入成功！')
+        }
+    }
+    </script>
+</body>
+</html>

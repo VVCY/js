@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="city">
+        <li id="bj">北京</li>
+        <li>上海</li>
+        <li>东京</li>
+        <li>首尔</li>
+    </ul>
+    <button>创建一个广州节点</button>
+    <button>广州加到北京前面</button>
+    <button>广州替换北京节点</button>
+    <button>删除北京节点</button>
+    <button>克隆ul节点</button>
+    <script>
+    var ul=document.getElementById("city");
+        var btns=document.getElementsByTagName("button");
+        btns[0].onclick=function(){
+            //创建一个广州节点
+            var li=document.createElement("li");
+            var txt=document.createTextNode("广州");
+            li.appendChild(txt);
+            ul.appendChild(li);
+        }
+        btns[1].onclick=function(){
+            var li=document.createElement("li");
+            var txt=document.createTextNode("广州");
+            li.appendChild(txt);
+            var bj=document.getElementById("bj");
+            ul.insertBefore(li,bj);
+        }
+        btns[2].onclick=function(){
+            var li=document.createElement("li");
+            var txt=document.createTextNode("广州");
+            li.appendChild(txt);
+            var bj=document.getElementById("bj");
+            ul.replaceChild(li,bj);
+        }
+        btns[3].onclick=function(){
+            var bj=document.getElementById("bj");
+            ul.removeChild(bj);
+        }
+        btns[4].onclick=function(){
+            //创建一个广州节点
+           var ulclone=ul.cloneNode(true);//true  
+           Document.body.appendChild(ulclone);
+        }
+    </script>
+</body>
+</html>

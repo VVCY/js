@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.自定义对象
+        var myMath={
+            PI:3.14,
+            max:function(){
+                var m=arguments[0];
+                for(var i=0;i<arguments.length;i++){
+                    if(m<arguments[i]){
+                        m=arguments[i];
+                    }
+                }
+                return m;
+            }
+        };
+        console.log(myMath.PI);
+        console.log(myMath['PI']);
+        console.log(myMath.max(1,2,314,45));
+    </script>
+</body>
+</html>

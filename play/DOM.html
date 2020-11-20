@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .wh{width: 100px;height: 100px;margin: 10px;}
+        .color{background-color: aquamarine;}
+        .change{width: 100px;height: 100px;margin: 10px;background-color: blueviolet;}
+    </style>
+    <div class="wh color"></div>
+    <div class="wh color"></div>
+    <div class="wh color"></div>
+    <div class="wh color"></div>
+    <script>
+        //var newcolor=document.querySelectorAll("div.color.wh");
+        var divc=document.querySelectorAll("div");
+        divc.onclick=function(){
+            //divc.className="change";
+            divc.style.backgroundColor="blue";
+        }
+    </script>
+</body>
+</html>

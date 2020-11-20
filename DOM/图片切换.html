@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>图一</button>
+    <button>图二</button>
+    <button>改</button>
+    <img src="../DOM/img/1.jpg" alt="" width="100%">
+    <script>
+        var btns=document.getElementsByTagName("button");
+        var img=document.querySelector("img");
+        btns[0].onclick=function(){
+            img.src="../DOM/img/2.jpg"
+        }
+        btns[1].onclick=function(){
+            img.src="../DOM/img/1.jpg"
+        }
+        btns[2].onclick=function(){
+            img.setAttribute("src","../DOM/img/2.jpg");
+        }
+    </script>
+</body>
+</html>
